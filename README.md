@@ -111,10 +111,10 @@ $file[ 'body' ] .= "
 
 Al pulsar en los enlaces nos muestra el contenido de los archivos
 
-![](images/lfi1.png)
+![](images/Imagen1.png)
 
 
-![](images/lfi2.png)
+![](images/Imagen2.png)
 
 ## Explotación de LFI
 ---
@@ -132,7 +132,7 @@ http://localhost/lfi.php?file=../../../../etc/passwd
 
 Si devuelve similar a:
 
-![](images/lfi3.png)
+![](images/Imagen3.png)
  
 La aplicación es vulnerable a LFI.
 
@@ -177,7 +177,7 @@ http://localhost/lfi.php?file=php://filter/convert.base64-encode/resource=index.
 	- convert.base64-encode → Codifica el contenido del archivo en Base64 en lugar de mostrarlo directamente.
 	- resource=index.html → Especifica el archivo que se quiere leer, en este caso index.html.
 
-![](images/lfi4.png)
+![](images/Imagen4.png)
 
 **Decodificar la cadena en Base64 y mostrar el resultado:**
 
@@ -187,7 +187,7 @@ Copiamos la cadena que hemos obtenido y realizamos la decodificación:
 echo "BASE64_ENCODED_DATA" | base64 -d
 ~~~
 
-![](images/lfi5.png)
+![](images/Imagen5.png)
 
 De esta forma hemos obtenido el contenido de un archivo que no debería de ser accesible. Es posible que podamos encontrar en este u otro archivo un comentario con la contraseña, el código funte, etc....
 
@@ -204,7 +204,7 @@ Esto intenta ejecutar el código php para solicitar el usuario que está ejecuta
 
 Hacemos un LFI para  Incluir el log, y así poder recuperar el resultado del comando ejecutado:
 
-![](images/lfi7.png)
+![](images/Imagen6.png)
 
 ~~~
 http://localhost/lfi.php?file=/var/log/apache2/access.log
@@ -257,7 +257,7 @@ if (isset($_GET['file'])) {
 
 Si intentamos incluir cualquier otro archivo nos dá acceso denegado:
  
-![](images/lfi8.png)
+![](images/Imagen7.png)
 
 **Bloquear Secuencias de Directorios (../)**
 ---
@@ -346,7 +346,7 @@ allow_url_include = Off
 allow_url_fopen = Off
 ~~~
 
-![](images/lfi9.png)
+![](images/Imagen8.png)
 
 Aquí puedes encontrar el fichero de configuración [php.ini](files/php.ini.lfi2).
 
