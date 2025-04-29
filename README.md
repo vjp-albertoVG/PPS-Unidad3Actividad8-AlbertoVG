@@ -259,7 +259,7 @@ if (isset($_GET['file'])) {
 
 Si intentamos incluir cualquier otro archivo nos dá acceso denegado:
  
-![](images/Imagen8.png)
+
 
 **Bloquear Secuencias de Directorios (../)**
 ---
