@@ -216,7 +216,7 @@ o si lo tenemos en la pila LAMP de docker en:
 http://localhost/lfi.php?file=/var/log/apache2/other_vhosts_access.log
 ~~~
 
-[](images/Imagen7.png)
+![](images/Imagen7.png)
 
 Si se muestra el resultado de **whoami**, LFI ha escalado a la ejecución de comandos (RCE).
 
@@ -296,7 +296,7 @@ if (isset($_GET['file'])) {
 </html>
 ~~~
 
-[](images/Imagen9.png)
+![](images/Imagen9.png)
 
 **Restringir el Tipo de Archivo**
 
