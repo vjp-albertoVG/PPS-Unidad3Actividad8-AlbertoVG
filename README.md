@@ -216,6 +216,8 @@ o si lo tenemos en la pila LAMP de docker en:
 http://localhost/lfi.php?file=/var/log/apache2/other_vhosts_access.log
 ~~~
 
+[](images/Imagen7.png)
+
 Si se muestra el resultado de **whoami**, LFI ha escalado a la ejecución de comandos (RCE).
 
 ### Mitigación de LFI
@@ -257,7 +259,7 @@ if (isset($_GET['file'])) {
 
 Si intentamos incluir cualquier otro archivo nos dá acceso denegado:
  
-![](images/Imagen7.png)
+![](images/Imagen8.png)
 
 **Bloquear Secuencias de Directorios (../)**
 ---
@@ -293,6 +295,8 @@ if (isset($_GET['file'])) {
 </body>
 </html>
 ~~~
+
+[](images/Imagen9.png)
 
 **Restringir el Tipo de Archivo**
 
@@ -346,7 +350,7 @@ allow_url_include = Off
 allow_url_fopen = Off
 ~~~
 
-![](images/Imagen8.png)
+![](images/Imagen10.png)
 
 Aquí puedes encontrar el fichero de configuración [php.ini](files/php.ini.lfi2).
 
